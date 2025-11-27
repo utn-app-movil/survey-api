@@ -1,0 +1,30 @@
+[
+    {
+      "provinceCode":1,
+      "provinceName": "San Jose"
+    },
+    {
+      "provinceCode":2,
+      "provinceName": "Alajuela"
+    },
+    {
+      "provinceCode":3,
+      "provinceName": "Cartago"
+    },
+    {
+      "provinceCode":4,
+      "provinceName": "Heredia"
+    },
+    {
+      "provinceCode":5,
+      "provinceName": "Guanacaste"
+    },
+    {
+      "countryCode":6,
+      "countryName": "Puntarenas"
+    },
+    {
+      "countryCode":7,
+      "countryName": "Limón"
+    }
+    ]

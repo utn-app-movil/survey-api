@@ -1,0 +1,129 @@
+swagger: "2.0"
+info:
+  title: Swagger People List - OpenAPI 3.0
+  description: ""
+  version: 1.0.
+host: "movil-survey-api.azurewebsites.net"
+basePath: "/people"
+tags:
+- name: people
+  description: Everything about people list
+
+paths:
+  /people/{id}:
+    get:
+      tags:
+      - people
+      summary: Get an specific person
+      description: Get an specific person
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Person Id"
+        required: true
+        type: integer
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            allOf:
+            - $ref: '#/definitions/ResponseOkPeople'
+        '400':
+          description: Invalid status value
+
+  /people:
+    get:
+      tags:
+      - people
+      summary: Get people list
+      description: Get people list
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            allOf:
+            - $ref: '#/definitions/ResponseOkGetPeople'
+        '400':
+          description: Invalid status value
+
+    put:
+      tags:
+      - people
+      summary: Update an existing pet
+      description: Update an existing pet by Id
+      operationId: updatePet
+
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            allOf:
+            - $ref: '#/definitions/ResponseOkPeople'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Pet not found
+        '422':
+          description: Validation exception
+
+definitions:
+  ResponseOkGetPeople:
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/People'
+      responseCode:
+        type: integer
+        example: 200
+      message:
+        type: string
+        example: Action executed sucessfully.
+  ResponseOkPeople:
+    type: object
+    properties:
+      data:
+        type: object
+        $ref: '#/definitions/People'
+      responseCode:
+        type: integer
+        example: 200
+      message:
+        type: string
+        example: Action executed sucessfully.
+
+  People:
+    required:
+    - name
+    - photoUrls
+    type: object
+    properties:
+      personId:
+        type: integer
+        format: int64
+        example: 10
+      name:
+        type: string
+        example: Juan Enrique
+      lastName:
+        type: string
+        example: Pérez Camacho
+      provinceCode:
+        type: integer
+        format: int64
+        example: 6
+      birthdate:
+        type: string
+        format: date
+        example: "2012-12-18"
+      gender:
+        type: string
+        example: "M"
+      status:
+        type: string
+        description: pet status in the store
+        enum:
+        - available
+        - pending
+        - sold
