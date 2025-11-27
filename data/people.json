@@ -13,6 +13,7 @@
     "state": "Puntarenas",
     "district": "Chacarita",
     "photo_url":"",
+    "address":"",
     "lat": -1,
     "long": 10
   },
@@ -29,6 +30,7 @@
     "phone": 36179238,
     "state": "Esparza",
     "district": "Espiritu Santo",
+    "address":"",
     "photo_url":"",
     "lat": -1,
     "long": 10
@@ -46,6 +48,7 @@
     "phone": 23679109,
     "state": "Cañas",
     "district": "Cañas",
+    "address":"",
     "photo_url":"",
     "lat": -1,
     "long": 10
