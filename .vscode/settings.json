@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/092eec1e-7fee-42d5-8033-e7dc202ee2f8/resourceGroups/appsvc_linux_eastus/providers/Microsoft.Web/sites/utn-movil-survey-api",
+    "appService.deploySubpath": "."
+}
